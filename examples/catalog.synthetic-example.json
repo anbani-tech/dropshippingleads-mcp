@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "version": "synthetic-test-only",
+  "release_period": "2026-Q4",
+  "published_at": "2026-10-30T00:00:00Z",
+  "records": [
+    {
+      "store_url": "https://outerwear.example/",
+      "categories": [
+        "服装"
+      ],
+      "markets": [
+        "US"
+      ],
+      "products": [
+        {
+          "title": "示例夹克 Example jacket",
+          "url": "https://outerwear.example/products/jacket"
+        }
+      ],
+      "contacts": [],
+      "sources": [
+        {
+          "url": "https://outerwear.example/products/jacket"
+        }
+      ],
+      "observed_at": null,
+      "classification_status": "confirmed",
+      "approved_for_public": true,
+      "id": "dsl-89121d006030b079dded"
+    },
+    {
+      "store_url": "https://homegoods.example/",
+      "categories": [
+        "家居"
+      ],
+      "markets": [
+        "GB"
+      ],
+      "products": [
+        {
+          "title": "示例椅子 Example chair",
+          "url": "https://homegoods.example/products/chair"
+        }
+      ],
+      "contacts": [
+        {
+          "type": "email",
+          "value": "public@homegoods.example"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://homegoods.example/"
+        }
+      ],
+      "observed_at": null,
+      "classification_status": "confirmed",
+      "approved_for_public": true,
+      "id": "dsl-5833b7163f0bbe10c97c"
+    }
+  ]
+}
