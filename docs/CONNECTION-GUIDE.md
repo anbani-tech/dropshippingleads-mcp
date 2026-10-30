@@ -22,7 +22,7 @@ MCP 查询公开快照，不执行实时搜索或爬取。现有市场参数表�
 | 服务 URL | `https://mcp.dropshippingleads.com/mcp` |
 | 传输 | Streamable HTTP |
 | 服务鉴权 | 首发免费方案无需 API Key，不设付费 MCP 账号 |
-| GitHub | `https://github.com/meacheal-ai/dsl-public-mcp` |
+| GitHub | `https://github.com/anbani-tech/dropshippingleads-mcp` |
 | 中文 / 英文介绍页 | `https://dropshippingleads.com/mcp/zh/` / `https://dropshippingleads.com/mcp/en/` |
 
 在支持远程 MCP 的客户端中新增服务器，填写 URL 和传输类型，按该客户端的流程启用。服务不要求 API Key，不代表客户端产品自身不要求账号、特定套餐或管理员许可。不同客户端入口和配置格式不同；本材料没有承诺 ChatGPT、豆包或所有版本已通过实际连接验证。
@@ -65,7 +65,7 @@ Add a remote MCP server in a compatible client with URL **`https://mcp.dropshipp
 
 Start with `get_data_coverage`, read the returned status, version, category and market labels, then use `search_merchants` and `get_merchant`. For the initial 14 categories, coverage, search and detail responses return English category names. Query with a canonical English name such as `Apparel, Footwear & Bags` (case-insensitive), or its original Chinese alias; both select the same category. Keyword matching also includes both category-language forms. Internal source labels are preserved. The initial pool covers **14 main categories, 100 free records per category, excluding food and beverages**. Pagination defaults to 10 and permits up to 50 per call. The owner-approved [Free Data Terms 1.0](FREE-DATA-TERMS.md) allow internal research, retention and private AI analysis without resale or public redistribution. Framework code uses [MIT](../LICENSE.txt); real data does not. Commercial cooperation remains a privately agreed quarterly data batch delivered by email; payment does not unlock a paid MCP tier.
 
-The repository is `meacheal-ai/dsl-public-mcp`. GitHub and directory listings provide discovery and instructions; the data service runs remotely. A source download contains no real catalog. Self-hosting requires Node.js 22+, locked dependencies and a separately approved catalog; `init-catalog.mjs` initializes a fresh download as `not_ready`. Local HTTP defaults to `127.0.0.1:54170/mcp`; stdio uses `node server.mjs`. A remote hosted client cannot reach your computer's loopback address.
+The repository is `anbani-tech/dropshippingleads-mcp`. GitHub and directory listings provide discovery and instructions; the data service runs remotely. A source download contains no real catalog. Self-hosting requires Node.js 22+, locked dependencies and a separately approved catalog; `init-catalog.mjs` initializes a fresh download as `not_ready`. Local HTTP defaults to `127.0.0.1:54170/mcp`; stdio uses `node server.mjs`. A remote hosted client cannot reach your computer's loopback address.
 
 `not_ready` does not mean no merchant exists. `ready` with zero matches only describes that public release. Respect `Retry-After` on 429/503. Report host/origin or TLS problems to the operator instead of weakening protections. The connection JSON is a parameter reference, not a universal client import file. Neither a directory listing nor a health response proves successful MCP client access.
 
