@@ -1,0 +1,13 @@
+node_modules/
+data/catalog.json
+data/backups/
+local-pool-preparation/
+local-release-preparation/
+*.tmp
+qa/
+.env
+.env.*
+!.env.example
+deploy/production.env
+*.pem
+*.key

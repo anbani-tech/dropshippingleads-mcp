@@ -1,0 +1,21 @@
+{
+  "documentType": "human-readable-connection-reference-not-universal-client-config",
+  "status": "REMOTE_CONNECTION_REFERENCE",
+  "name": "DropshippingLeads MCP",
+  "transport": "streamable-http",
+  "url": "https://mcp.dropshippingleads.com/mcp",
+  "authentication": {
+    "serviceApiKeyRequired": false,
+    "clientProductRequirements": "Check the chosen client account, plan and administrator settings."
+  },
+  "realClientCompatibilityVerified": false,
+  "sourceDownloadContainsRealCatalog": false,
+  "paidDelivery": "Privately agreed quarterly data batch delivered by email; no paid MCP unlock.",
+  "clientCompatibilityNote": "Support and account requirements vary by client. No guarantee of ChatGPT, Doubao or other named-product compatibility is made.",
+  "repository": "https://github.com/meacheal-ai/dsl-public-mcp",
+  "termsUrl": "https://dropshippingleads.com/materials/mcp/docs/FREE-DATA-TERMS.md",
+  "codeLicense": "MIT (code only)",
+  "publicEndpointVerified": true,
+  "publicEndpointVerifiedAt": "2026-10-30T11:48:38.593Z",
+  "protocolClient": "Official MCP JS SDK"
+}

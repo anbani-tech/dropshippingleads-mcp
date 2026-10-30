@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "dsl-public-data": {
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PATH/TO/dsl-public-mcp/server.mjs"
+      ]
+    }
+  }
+}

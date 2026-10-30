@@ -1,0 +1,24 @@
+{
+  "name": "dsl-public-mcp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "DropshippingLeads — Small Online Retailer Data for Dropshipping Platforms. English categories with Chinese query compatibility.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "http": "node http.mjs",
+    "test": "node --test *.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "@modelcontextprotocol/node": "2.1.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0"
+  },
+  "license": "MIT"
+}

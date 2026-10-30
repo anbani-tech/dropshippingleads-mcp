@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.meacheal-ai/dsl-public-mcp",
+  "title": "DropshippingLeads MCP",
+  "description": "Small online retailer data for dropshipping platforms.",
+  "version": "0.2.0",
+  "websiteUrl": "https://dropshippingleads.com/mcp/zh/",
+  "repository": {
+    "url": "https://github.com/meacheal-ai/dsl-public-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.dropshippingleads.com/mcp"
+    }
+  ]
+}
