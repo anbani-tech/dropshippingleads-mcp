@@ -14,7 +14,7 @@ Collection focuses on merchants whose business operations are based outside Chin
 
 ## Remote connection
 
-Connect to the remote **Streamable HTTP** service at `https://mcp.dropshippingleads.com/mcp`. No service API key is required. The source and documentation repository is `meacheal-ai/dsl-public-mcp`, linked from the website and MCP directories. Queries run on the remote service; a source download contains no real catalog. Your client may have its own account, plan or administrator requirements. See the [connection guide](docs/CONNECTION-GUIDE.md).
+Connect to the remote **Streamable HTTP** service at `https://mcp.dropshippingleads.com/mcp`. No service API key is required. The source and documentation repository is `anbani-tech/dropshippingleads-mcp`, linked from the website and MCP directories. Queries run on the remote service; a source download contains no real catalog. Your client may have its own account, plan or administrator requirements. See the [connection guide](docs/CONNECTION-GUIDE.md).
 
 ## Code license and free-data rules
 

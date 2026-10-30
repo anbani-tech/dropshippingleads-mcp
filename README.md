@@ -14,7 +14,7 @@ DropshippingLeads 为一件代发平台提供海外小 B 商家数据，帮助�
 
 ## 远程接入
 
-免费体验优先连接远程 **Streamable HTTP** 服务：`https://mcp.dropshippingleads.com/mcp`，无需服务 API Key。GitHub 仓库为 `meacheal-ai/dsl-public-mcp`；官网及 MCP 平台介绍页提供说明与接入入口。真实查询由远程服务提供，下载源码不附真实 catalog。客户端产品可能另有账号、套餐或管理员要求；具体接入方式见[完整接入说明](docs/CONNECTION-GUIDE.md)。
+免费体验优先连接远程 **Streamable HTTP** 服务：`https://mcp.dropshippingleads.com/mcp`，无需服务 API Key。GitHub 仓库为 `anbani-tech/dropshippingleads-mcp`；官网及 MCP 平台介绍页提供说明与接入入口。真实查询由远程服务提供，下载源码不附真实 catalog。客户端产品可能另有账号、套餐或管理员要求；具体接入方式见[完整接入说明](docs/CONNECTION-GUIDE.md)。
 
 ## 代码许可与免费数据规则
 
