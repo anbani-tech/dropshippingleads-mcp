@@ -1,0 +1,62 @@
+# PREPARATION ONLY: include inside nginx's http {} context on the SAME host
+# as DSL MCP. Replace REPLACE_MCP_HOST and certificate paths before use.
+# No DNS or certificate setup is performed by this file.
+# Adds only the chosen MCP virtual host. Do not replace an existing website's
+# config or default_server. No port-80 route or automatic POST redirect is added.
+
+server {
+    listen 443 ssl;
+    server_name REPLACE_MCP_HOST;
+
+    ssl_certificate     /REPLACE_CERTIFICATE_PATH/fullchain.pem;
+    ssl_certificate_key /REPLACE_CERTIFICATE_PATH/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    # Exact selected public host; application checks it again.
+    if ($host != "REPLACE_MCP_HOST") { return 403; }
+
+    server_tokens off;
+    client_max_body_size 64k;
+    client_body_timeout 10s;
+    send_timeout 30s;
+
+    # This example does not log queries, contact records or request bodies.
+    # Add a minimal operational log later only if needed.
+    access_log off;
+
+    location ~ ^/(mcp|health)$ {
+        proxy_pass http://127.0.0.1:54170;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+
+        # Port 443 template: $host matches the canonical HTTPS origin's host.
+        # For another HTTPS port, deliberately adapt to validated $http_host
+        # and set the same port in DSL_PUBLIC_ORIGIN; do not blindly copy.
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # Overwrite caller headers. NEVER use $proxy_add_x_forwarded_for here.
+        # This single value is the client identity used by application limits.
+        proxy_set_header X-Forwarded-For $remote_addr;
+
+        # Preserve the caller's actual Origin so the application can reject it.
+        # Never replace Origin with the configured public domain.
+        proxy_set_header Origin $http_origin;
+        proxy_set_header Forwarded "";
+        proxy_set_header X-Forwarded-Host "";
+        proxy_set_header X-Real-IP "";
+
+        # Streamable HTTP responses must not wait for a proxy buffer to fill.
+        proxy_buffering off;
+        proxy_request_buffering off;
+        proxy_cache off;
+        proxy_connect_timeout 5s;
+        proxy_send_timeout 30s;
+        proxy_read_timeout 35s;
+
+        # Application owns exact CORS validation, OPTIONS, 429/503 and Retry-After.
+        # No add_header Access-Control-Allow-Origin * and no duplicate limiter.
+    }
+
+    location / { return 404; }
+}
